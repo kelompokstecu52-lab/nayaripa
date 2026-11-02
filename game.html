@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Horror Game - Labirin Misteri</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Memuat Three.js dari CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Layar Menu / Login Awal -->
+    <div id="menu-screen" class="screen">
+        <div class="card">
+            <h1>🔦 KORIDOR GELAP</h1>
+            <p>Temukan Kunci Emas di labirin sebelum waktu habis! Hindari bayangan hitam misterius.</p>
+            <input type="text" id="player-name" placeholder="Nama Penjelajah..." required>
+            <button onclick="startGame()">MASUK KE LABIRIN</button>
+        </div>
+    </div>
+
+    <!-- Layar Game Utama -->
+    <div id="game-ui" style="display: none;">
+        <div id="hud">
+            <span id="hud-name">Pemain: -</span>
+            <span id="hud-key">🔑 Kunci: 0 / 1</span>
+            <span id="hud-timer">⏱️ Waktu: 60s</span>
+        </div>
+        <div id="crosshair">+</div>
+        <div id="controls-hint">Gunakan <b>W, A, S, D</b> untuk bergerak | Geser Mouse untuk melihat arah</div>
+    </div>
+
+    <!-- Layar Game Over / Menang -->
+    <div id="end-screen" class="screen" style="display: none;">
+        <div class="card">
+            <h1 id="end-title">GAME OVER</h1>
+            <p id="end-message">Kamu gagal keluar dari labirin...</p>
+            <button onclick="restartGame()">COBA LAGI</button>
+        </div>
+    </div>
+
+    <!-- Skrip Game 3D -->
+    <script src="script.js"></script>
+</body>
+</html>
